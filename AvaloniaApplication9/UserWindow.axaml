@@ -1,0 +1,67 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="750" Height="400"
+        x:Class="AvaloniaApplication9.UserWindow"
+        Title="Пользователи">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="1"
+                  Grid.ColumnSpan="7"
+                  Grid.RowSpan="4"
+                  Name="UsersDGrid"
+                  AutoGenerateColumns="False"
+                  CanUserReorderColumns="False"
+                  CanUserResizeColumns="False"
+                  ColumnWidth="*"> 
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Логин" 
+                                    Binding="{Binding Login}"
+                                    Width="100"/>
+                <DataGridTextColumn Header="Имя" 
+                                    Binding="{Binding Name}"
+                                    Width="100"/>
+                <DataGridTextColumn Header="Фамилия" 
+                                    Binding="{Binding Surname}"
+                                    Width="100"/>
+                <DataGridTextColumn Header="Дата рождения" 
+                                    Binding="{Binding Birthdate}"/>
+                <DataGridTextColumn Header="Номер телефона" 
+                                    Binding="{Binding PhoneNumber}"/>
+                <DataGridTextColumn Header="Роль" 
+                                    Binding="{Binding IdRoleNavigation.Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBox Height="30"
+                 Width="200"
+                 Name="SearchTBox"
+                 Grid.ColumnSpan="2"/>
+
+        <Button Grid.Column="2"
+                Content="Найти"
+                Name="SearchBtn"
+                Click="SearchBtn_OnClick"/>
+        
+        <Button Content="Выйти"
+                Name="LogOutBtn"
+                Click="LogOutBtn_OnClick"
+                Grid.Column="6"/>
+    </Grid>
+</Window>

@@ -1,0 +1,47 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication9.EditWindow"
+        Title="Регистрация">
+    <StackPanel Orientation="Vertical"
+                Margin="25"
+                VerticalAlignment="Center" >
+        <TextBox Name="LoginTBox"
+                 Watermark="Введите логин"
+                 Margin="0 0 0 10"/>
+        <TextBox Name="PasswordTBox"
+                 Watermark="Введите пароль"
+                 PasswordChar="*"
+                 Margin="0 0 0 10"/>
+        <TextBox Name="NameTBox"
+                 Watermark="Введите имя"
+                 Margin="0 0 0 10"/>
+        <TextBox Name="SurnameTBox"
+                 Watermark="Введите фамилию"
+                 Margin="0 0 0 10"/>
+        <TextBox Name="PhonenumberTBox"
+                 Watermark="Введите номер телефона"
+                 Margin="0 0 0 10"/>
+        <ComboBox Name="RoleCBox"
+                  Margin="0 0 0 30"
+                  Width="300">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+            
+        <Button Content="Изменить"
+                HorizontalAlignment="Center"
+                Margin="0 0 0 10"
+                Name="RegBtn"
+                Click="EditBtn_OnClick"/>
+        <Button Content="Отмена"
+                HorizontalAlignment="Center"
+                Name="BackBtn"
+                Click="BackBtn_OnClick"/>
+    </StackPanel>
+</Window>
